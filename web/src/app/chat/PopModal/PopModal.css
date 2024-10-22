@@ -1,0 +1,27 @@
+div[data-popmodal-style] {
+  right: 0px;
+  transition: all 0.1s ease-in 0s;
+  top: 6em;
+  height: 80%;
+  border-radius: 1em;
+  margin: 0px 0.8em;
+  transform: translateX(0);
+  width: 50%;
+  width: 0;
+  transform: translateX(100%);
+}
+div[data-popmodal-style='isOpen'] {
+  width: 50%;
+  transform: translateX(0px);
+}
+@media (max-width: 960px) {
+  div[data-popmodal-style='isOpen'] {
+    width: 96%;
+    height: 93%;
+    position: absolute;
+    margin: 0 auto;
+    left: 0;
+    top: 4em;
+  }
+}
+/*# sourceMappingURL=PopModal.css.map */

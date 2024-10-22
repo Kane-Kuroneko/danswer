@@ -42,6 +42,8 @@
     "react-loader-spinner": "^5.4.5",
     "react-markdown": "^9.0.1",
     "react-select": "^5.8.0",
+    "reaxes": "^0.0.11",
+    "reaxes-react": "^0.0.7",
     "rehype-prism-plus": "^2.0.0",
     "remark-gfm": "^4.0.0",
     "semver": "^7.5.4",
