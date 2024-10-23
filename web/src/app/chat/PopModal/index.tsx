@@ -3,7 +3,6 @@
 import { Message } from "../interfaces";
 import { ForwardedRef , forwardRef } from "react";
 import { usePopup } from "@/components/admin/connectors/Popup";
-import { DocumentSidebar } from "../documentSidebar/DocumentSidebar";
 import { DanswerDocument } from "@/lib/search/interfaces";
 import { Divider , Text } from "@tremor/react";
 import { ChatDocumentDisplay } from "../documentSidebar/ChatDocumentDisplay";
@@ -165,5 +164,3 @@ export const PopModal = forwardRef<HTMLDivElement, DocumentSidebarProps>(
     );
   }
 );
-
-DocumentSidebar.displayName = "DocumentSidebar";
