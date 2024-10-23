@@ -105,12 +105,15 @@ import BlurBackground from "./shared_chat_search/BlurBackground";
 import { NoAssistantModal } from "@/components/modals/NoAssistantModal";
 import { useAssistants } from "@/components/context/AssistantsContext";
 import { PopModal } from './PopModal';
+import { SearchPreviewModal } from '../../components/search/results/SearchPreviewModal';
+import { reaxel_SearchPreviewModal } from '../../components/search/results/SearchPreviewModal/SearchPreviewModal.reaxel';
+import { reaxper } from 'reaxes-react';
 
 const TEMP_USER_MESSAGE_ID = -1;
 const TEMP_ASSISTANT_MESSAGE_ID = -2;
 const SYSTEM_MESSAGE_ID = -3;
 
-export function ChatPage({
+export const ChatPage = reaxper(({
   toggle,
   documentSidebarInitialWidth,
   toggledSidebar,
@@ -118,7 +121,8 @@ export function ChatPage({
   toggle: (toggled?: boolean) => void;
   documentSidebarInitialWidth?: number;
   toggledSidebar: boolean;
-}) {
+}) => {
+  const { SearchPreviewModal_Store } = reaxel_SearchPreviewModal();
   const router = useRouter();
   const searchParams = useSearchParams();
 
@@ -1967,7 +1971,7 @@ export function ChatPage({
                       )}
 
                       <div
-                        style = { documentSelection ? {width : '50%'} : {width : '100%'}}
+                        style = { (documentSelection || SearchPreviewModal_Store.isOpen) ? {width : '50%'} : {width : '100%'}}
                         className={`h-full w-full relative flex-auto transition-margin duration-300 overflow-x-auto mobile:pb-12 desktop:pb-[100px]`}
                         {...getRootProps()}
                       >
@@ -2481,6 +2485,19 @@ export function ChatPage({
                         isLoading={isFetchingChatMessages}
                         isOpen={documentSelection}
                       />
+                      <SearchPreviewModal
+                        initialWidth={350}
+                        ref={innerSidebarElementRef}
+                        closeSidebar={() => setDocumentSelection(false)}
+                        selectedMessage={aiMessage}
+                        selectedDocuments={selectedDocuments}
+                        toggleDocumentSelection={toggleDocumentSelection}
+                        clearSelectedDocuments={clearSelectedDocuments}
+                        selectedDocumentTokens={selectedDocumentTokens}
+                        maxTokens={maxTokens}
+                        isLoading={isFetchingChatMessages}
+                        isOpen={documentSelection}
+                      />
                     </div>
                   )}
                 </Dropzone>
@@ -2503,4 +2520,5 @@ export function ChatPage({
       </div>
     </>
   );
-}
+})
+
