@@ -10,6 +10,7 @@ import {
   GithubIcon,
   GitlabIcon,
   GlobeIcon,
+  YoutubeIcon,
   GmailIcon,
   GongIcon,
   GoogleDriveIcon,
@@ -58,6 +59,12 @@ type SourceMap = {
 };
 
 const SOURCE_METADATA_MAP: SourceMap = {
+  youtube: {
+    icon: YoutubeIcon,
+    displayName: "Youtube",
+    category: SourceCategory.Other,
+    docs: "https://docs.danswer.dev/connectors/youtube",
+  },
   web: {
     icon: GlobeIcon,
     displayName: "Web",

@@ -41,6 +41,7 @@ import {
   FiBarChart2,
   FiDatabase,
   FiSlack,
+  FiYoutube,
 } from "react-icons/fi";
 import { SiBookstack } from "react-icons/si";
 import Image, { StaticImageData } from "next/image";
@@ -478,6 +479,13 @@ export const XSquareIcon = ({
   className = defaultTailwindCSS,
 }: IconProps) => {
   return <XSquare size={size} className={className} />;
+};
+
+export const YoutubeIcon = ({
+  size = 16,
+  className = defaultTailwindCSS,
+}: IconProps) => {
+  return <FiYoutube size={size} className={className} />;
 };
 
 export const GlobeIcon = ({

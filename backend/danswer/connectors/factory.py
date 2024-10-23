@@ -42,6 +42,7 @@ from danswer.connectors.slack.connector import SlackPollConnector
 from danswer.connectors.slack.load_connector import SlackLoadConnector
 from danswer.connectors.teams.connector import TeamsConnector
 from danswer.connectors.web.connector import WebConnector
+from danswer.connectors.youtube.connector import YoutubeConnector
 from danswer.connectors.wikipedia.connector import WikipediaConnector
 from danswer.connectors.xenforo.connector import XenforoConnector
 from danswer.connectors.zendesk.connector import ZendeskConnector

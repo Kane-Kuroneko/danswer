@@ -102,6 +102,21 @@ export const connectorConfigs: Record<
   ConfigurableSources,
   ConnectionConfiguration
 > = {
+  youtube:{
+    description: "Configure Youtube connector",
+    values: [
+      {
+        type: "text",
+        query:
+          "Enter the Youtube URL to scrape e.g. https://docs.danswer.dev/:",
+        label: "Base URL",
+        name: "base_url",
+        optional: false,
+      },
+    ],
+    advanced_values: [],
+    overrideDefaultFreq: 60 * 60 * 24,
+  },
   web: {
     description: "Configure Web connector",
     values: [

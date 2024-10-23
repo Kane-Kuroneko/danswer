@@ -223,6 +223,7 @@ export interface UserGroup {
 }
 
 const validSources = [
+  "youtube",
   "web",
   "github",
   "gitlab",
